@@ -19,6 +19,10 @@
   include_tasks: disks.yaml
   when: setup_disks|default(false)|bool == true
 
+- name: setup ramdisk
+  include_tasks: ramdisk.yaml
+  when: setup_disks|default(false)|bool == true
+
 - name: logrotate
   include_tasks: rotate.yaml
 
